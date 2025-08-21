@@ -21,13 +21,13 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
 
-      - name: Authenticate to Vault
+      - name: Login to Vault with Root Token
         run: |
-          curl --request POST \
-            --data 
-            $VAULT_ADDR/v1/auth/jwt/login | tee vault-login.json
-          export VAULT_TOKEN=${{ secrets.VAULT_TOKEN }}
-          echo "VAULT_TOKEN=$VAULT_TOKEN" >> $GITHUB_ENV
+          echo "VAULT_TOKEN=${{ secrets.VAULT_TOKEN }}" >> $GITHUB_ENV
+        env:
+          VAULT_ADDR: http://13.204.46.99:8200
+          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+          VAULT_ROLE: terraform-role
 
       - name: Fetch AWS Credentials from Vault
         run: |
