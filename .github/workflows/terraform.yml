@@ -1,0 +1,49 @@
+name: Terraform CI/CD
+
+on:
+  pull_request:
+    branches: [ dev ]
+  push:
+    branches: [ dev ]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    env:
+      VAULT_ADDR: http://13.204.46.99:8200
+      VAULT_ROLE: terraform-role
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Login to Vault with Root Token
+        run: |
+          echo "VAULT_TOKEN=${{ secrets.VAULT_TOKEN }}" >> $GITHUB_ENV
+        env:
+          VAULT_ADDR: http://13.204.46.99:8200
+          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+          VAULT_ROLE: terraform-role
+
+      - name: Fetch AWS Credentials from Vault
+        run: |
+          CREDS=$(curl --header "X-Vault-Token: $VAULT_TOKEN" $VAULT_ADDR/v1/aws/creds/$VAULT_ROLE)
+          AWS_ACCESS_KEY_ID=$(echo $CREDS | jq -r .data.access_key)
+          AWS_SECRET_ACCESS_KEY=$(echo $CREDS | jq -r .data.secret_key)
+          echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> $GITHUB_ENV
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        if: github.event_name == 'pull_request'
+        run: terraform plan
+
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve
