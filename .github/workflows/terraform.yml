@@ -26,7 +26,7 @@ jobs:
           curl --request POST \
             --data '{"role":"github","jwt":"${{ secrets.GITHUB_TOKEN }}"}' \
             $VAULT_ADDR/v1/auth/jwt/login | tee vault-login.json
-          export VAULT_TOKEN=$(jq -r .auth.client_token vault-login.json)
+          export VAULT_TOKEN=${{ secrets.VAULT_TOKEN }}
           echo "VAULT_TOKEN=$VAULT_TOKEN" >> $GITHUB_ENV
 
       - name: Fetch AWS Credentials from Vault
