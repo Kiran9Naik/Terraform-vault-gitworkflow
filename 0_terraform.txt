@@ -1,0 +1,322 @@
+﻿2025-08-21T15:39:12.9428510Z Current runner version: '2.328.0'
+2025-08-21T15:39:12.9452980Z ##[group]Runner Image Provisioner
+2025-08-21T15:39:12.9453806Z Hosted Compute Agent
+2025-08-21T15:39:12.9454461Z Version: 20250818.377
+2025-08-21T15:39:12.9455080Z Commit: 3c593e9f75fe0b87e893bca80d6e12ba089c61fc
+2025-08-21T15:39:12.9455802Z Build Date: 2025-08-18T14:52:18Z
+2025-08-21T15:39:12.9456446Z ##[endgroup]
+2025-08-21T15:39:12.9456980Z ##[group]Operating System
+2025-08-21T15:39:12.9457515Z Ubuntu
+2025-08-21T15:39:12.9458041Z 24.04.2
+2025-08-21T15:39:12.9458512Z LTS
+2025-08-21T15:39:12.9458980Z ##[endgroup]
+2025-08-21T15:39:12.9459538Z ##[group]Runner Image
+2025-08-21T15:39:12.9460096Z Image: ubuntu-24.04
+2025-08-21T15:39:12.9460574Z Version: 20250818.1.0
+2025-08-21T15:39:12.9461715Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250818.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-08-21T15:39:12.9463487Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250818.1
+2025-08-21T15:39:12.9464564Z ##[endgroup]
+2025-08-21T15:39:12.9465639Z ##[group]GITHUB_TOKEN Permissions
+2025-08-21T15:39:12.9467572Z Contents: read
+2025-08-21T15:39:12.9468100Z Metadata: read
+2025-08-21T15:39:12.9468650Z Packages: read
+2025-08-21T15:39:12.9469164Z ##[endgroup]
+2025-08-21T15:39:12.9471622Z Secret source: Actions
+2025-08-21T15:39:12.9472567Z Prepare workflow directory
+2025-08-21T15:39:12.9870719Z Prepare all required actions
+2025-08-21T15:39:12.9909069Z Getting action download info
+2025-08-21T15:39:13.4402022Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-08-21T15:39:13.5380646Z Download action repository 'hashicorp/setup-terraform@v2' (SHA:633666f66e0061ca3b725c73b2ec20cd13a8fdd1)
+2025-08-21T15:39:14.2083017Z Complete job name: terraform
+2025-08-21T15:39:14.2812094Z ##[group]Run actions/checkout@v3
+2025-08-21T15:39:14.2813596Z with:
+2025-08-21T15:39:14.2814137Z   repository: Kiran9Naik/Terraform-vault-gitworkflow
+2025-08-21T15:39:14.2814989Z   token: ***
+2025-08-21T15:39:14.2815441Z   ssh-strict: true
+2025-08-21T15:39:14.2815902Z   persist-credentials: true
+2025-08-21T15:39:14.2816412Z   clean: true
+2025-08-21T15:39:14.2816848Z   sparse-checkout-cone-mode: true
+2025-08-21T15:39:14.2817374Z   fetch-depth: 1
+2025-08-21T15:39:14.2817801Z   fetch-tags: false
+2025-08-21T15:39:14.2818224Z   lfs: false
+2025-08-21T15:39:14.2818629Z   submodules: false
+2025-08-21T15:39:14.2819093Z   set-safe-directory: true
+2025-08-21T15:39:14.2819862Z env:
+2025-08-21T15:39:14.2820304Z   VAULT_ADDR: http://13.204.46.99:8200
+2025-08-21T15:39:14.2820875Z   VAULT_ROLE: terraform-role
+2025-08-21T15:39:14.2821371Z ##[endgroup]
+2025-08-21T15:39:14.3709944Z Syncing repository: Kiran9Naik/Terraform-vault-gitworkflow
+2025-08-21T15:39:14.3712636Z ##[group]Getting Git version info
+2025-08-21T15:39:14.3713843Z Working directory is '/home/runner/work/Terraform-vault-gitworkflow/Terraform-vault-gitworkflow'
+2025-08-21T15:39:14.3715337Z [command]/usr/bin/git version
+2025-08-21T15:39:14.3747252Z git version 2.51.0
+2025-08-21T15:39:14.3775648Z ##[endgroup]
+2025-08-21T15:39:14.3793009Z Temporarily overriding HOME='/home/runner/work/_temp/67a551d5-dbdd-41a2-ba44-a09e542475b0' before making global git config changes
+2025-08-21T15:39:14.3795738Z Adding repository directory to the temporary git global config as a safe directory
+2025-08-21T15:39:14.3798516Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Terraform-vault-gitworkflow/Terraform-vault-gitworkflow
+2025-08-21T15:39:14.3835703Z Deleting the contents of '/home/runner/work/Terraform-vault-gitworkflow/Terraform-vault-gitworkflow'
+2025-08-21T15:39:14.3839195Z ##[group]Initializing the repository
+2025-08-21T15:39:14.3843716Z [command]/usr/bin/git init /home/runner/work/Terraform-vault-gitworkflow/Terraform-vault-gitworkflow
+2025-08-21T15:39:14.3906828Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-08-21T15:39:14.3908805Z hint: is subject to change. To configure the initial branch name to use in all
+2025-08-21T15:39:14.3910826Z hint: of your new repositories, which will suppress this warning, call:
+2025-08-21T15:39:14.3912635Z hint:
+2025-08-21T15:39:14.3913713Z hint: 	git config --global init.defaultBranch <name>
+2025-08-21T15:39:14.3915000Z hint:
+2025-08-21T15:39:14.3916206Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-08-21T15:39:14.3918392Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-08-21T15:39:14.3920020Z hint:
+2025-08-21T15:39:14.3920963Z hint: 	git branch -m <name>
+2025-08-21T15:39:14.3921972Z hint:
+2025-08-21T15:39:14.3923403Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-08-21T15:39:14.3925871Z Initialized empty Git repository in /home/runner/work/Terraform-vault-gitworkflow/Terraform-vault-gitworkflow/.git/
+2025-08-21T15:39:14.3928408Z [command]/usr/bin/git remote add origin https://github.com/Kiran9Naik/Terraform-vault-gitworkflow
+2025-08-21T15:39:14.3954100Z ##[endgroup]
+2025-08-21T15:39:14.3955545Z ##[group]Disabling automatic garbage collection
+2025-08-21T15:39:14.3957021Z [command]/usr/bin/git config --local gc.auto 0
+2025-08-21T15:39:14.3984533Z ##[endgroup]
+2025-08-21T15:39:14.3986011Z ##[group]Setting up auth
+2025-08-21T15:39:14.3990757Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-08-21T15:39:14.4019655Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-08-21T15:39:14.4305726Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-08-21T15:39:14.4338271Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-08-21T15:39:14.4571195Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-08-21T15:39:14.4604455Z ##[endgroup]
+2025-08-21T15:39:14.4605495Z ##[group]Fetching the repository
+2025-08-21T15:39:14.4613322Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +f325c5de08c19d006635a7aca63db479c40becc4:refs/remotes/pull/5/merge
+2025-08-21T15:39:14.8205256Z remote: Enumerating objects: 15, done.        
+2025-08-21T15:39:14.8207768Z remote: Counting objects:   6% (1/15)        
+2025-08-21T15:39:14.8209799Z remote: Counting objects:  13% (2/15)        
+2025-08-21T15:39:14.8211229Z remote: Counting objects:  20% (3/15)        
+2025-08-21T15:39:14.8212722Z remote: Counting objects:  26% (4/15)        
+2025-08-21T15:39:14.8213902Z remote: Counting objects:  33% (5/15)        
+2025-08-21T15:39:14.8214885Z remote: Counting objects:  40% (6/15)        
+2025-08-21T15:39:14.8215885Z remote: Counting objects:  46% (7/15)        
+2025-08-21T15:39:14.8216939Z remote: Counting objects:  53% (8/15)        
+2025-08-21T15:39:14.8218016Z remote: Counting objects:  60% (9/15)        
+2025-08-21T15:39:14.8219122Z remote: Counting objects:  66% (10/15)        
+2025-08-21T15:39:14.8220229Z remote: Counting objects:  73% (11/15)        
+2025-08-21T15:39:14.8221375Z remote: Counting objects:  80% (12/15)        
+2025-08-21T15:39:14.8222635Z remote: Counting objects:  86% (13/15)        
+2025-08-21T15:39:14.8223706Z remote: Counting objects:  93% (14/15)        
+2025-08-21T15:39:14.8224740Z remote: Counting objects: 100% (15/15)        
+2025-08-21T15:39:14.8225840Z remote: Counting objects: 100% (15/15), done.        
+2025-08-21T15:39:14.8226978Z remote: Compressing objects:  10% (1/10)        
+2025-08-21T15:39:14.8228092Z remote: Compressing objects:  20% (2/10)        
+2025-08-21T15:39:14.8229323Z remote: Compressing objects:  30% (3/10)        
+2025-08-21T15:39:14.8230709Z remote: Compressing objects:  40% (4/10)        
+2025-08-21T15:39:14.8232107Z remote: Compressing objects:  50% (5/10)        
+2025-08-21T15:39:14.8233982Z remote: Compressing objects:  60% (6/10)        
+2025-08-21T15:39:14.8235604Z remote: Compressing objects:  70% (7/10)        
+2025-08-21T15:39:14.8237717Z remote: Compressing objects:  80% (8/10)        
+2025-08-21T15:39:14.8239327Z remote: Compressing objects:  90% (9/10)        
+2025-08-21T15:39:14.8240784Z remote: Compressing objects: 100% (10/10)        
+2025-08-21T15:39:14.8242759Z remote: Compressing objects: 100% (10/10), done.        
+2025-08-21T15:39:14.8244857Z remote: Total 15 (delta 1), reused 11 (delta 1), pack-reused 0 (from 0)        
+2025-08-21T15:39:14.8286065Z From https://github.com/Kiran9Naik/Terraform-vault-gitworkflow
+2025-08-21T15:39:14.8289228Z  * [new ref]         f325c5de08c19d006635a7aca63db479c40becc4 -> pull/5/merge
+2025-08-21T15:39:14.8320836Z ##[endgroup]
+2025-08-21T15:39:14.8323136Z ##[group]Determining the checkout info
+2025-08-21T15:39:14.8325122Z ##[endgroup]
+2025-08-21T15:39:14.8327063Z ##[group]Checking out the ref
+2025-08-21T15:39:14.8328811Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/5/merge
+2025-08-21T15:39:14.8366677Z Note: switching to 'refs/remotes/pull/5/merge'.
+2025-08-21T15:39:14.8368199Z 
+2025-08-21T15:39:14.8369461Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-08-21T15:39:14.8372415Z changes and commit them, and you can discard any commits you make in this
+2025-08-21T15:39:14.8375142Z state without impacting any branches by switching back to a branch.
+2025-08-21T15:39:14.8376569Z 
+2025-08-21T15:39:14.8377422Z If you want to create a new branch to retain commits you create, you may
+2025-08-21T15:39:14.8379448Z do so (now or later) by using -c with the switch command. Example:
+2025-08-21T15:39:14.8380600Z 
+2025-08-21T15:39:14.8381349Z   git switch -c <new-branch-name>
+2025-08-21T15:39:14.8382684Z 
+2025-08-21T15:39:14.8383122Z Or undo this operation with:
+2025-08-21T15:39:14.8383856Z 
+2025-08-21T15:39:14.8384367Z   git switch -
+2025-08-21T15:39:14.8384891Z 
+2025-08-21T15:39:14.8385802Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-08-21T15:39:14.8387140Z 
+2025-08-21T15:39:14.8388703Z HEAD is now at f325c5d Merge 33f906b497689893a8f48bfcade434eb30dee870 into 5f4714b2547ec1cc71fc3970356e8ba60e85ac11
+2025-08-21T15:39:14.8393110Z ##[endgroup]
+2025-08-21T15:39:14.8411826Z [command]/usr/bin/git log -1 --format='%H'
+2025-08-21T15:39:14.8434157Z 'f325c5de08c19d006635a7aca63db479c40becc4'
+2025-08-21T15:39:14.8667399Z ##[group]Run hashicorp/setup-terraform@v2
+2025-08-21T15:39:14.8668591Z with:
+2025-08-21T15:39:14.8669511Z   cli_config_credentials_hostname: app.terraform.io
+2025-08-21T15:39:14.8670786Z   terraform_version: latest
+2025-08-21T15:39:14.8671774Z   terraform_wrapper: true
+2025-08-21T15:39:14.8672946Z env:
+2025-08-21T15:39:14.8673754Z   VAULT_ADDR: http://13.204.46.99:8200
+2025-08-21T15:39:14.8674888Z   VAULT_ROLE: terraform-role
+2025-08-21T15:39:14.8675841Z ##[endgroup]
+2025-08-21T15:39:15.2761868Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/8a3492a6-818d-4c74-ac73-80f7cfcc86b2
+2025-08-21T15:39:15.9900438Z ##[group]Run echo "VAULT_TOKEN=***" >> $GITHUB_ENV
+2025-08-21T15:39:15.9902352Z [36;1mecho "VAULT_TOKEN=***" >> $GITHUB_ENV[0m
+2025-08-21T15:39:15.9974642Z shell: /usr/bin/bash -e {0}
+2025-08-21T15:39:15.9975599Z env:
+2025-08-21T15:39:15.9976390Z   VAULT_ADDR: http://13.204.46.99:8200
+2025-08-21T15:39:15.9977490Z   VAULT_ROLE: terraform-role
+2025-08-21T15:39:15.9978966Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/00b41b92-4e43-41ed-98a6-c5b565988ed3
+2025-08-21T15:39:15.9980732Z   VAULT_TOKEN: ***
+2025-08-21T15:39:15.9981531Z ##[endgroup]
+2025-08-21T15:39:16.0140857Z ##[group]Run CREDS=$(curl --header "X-Vault-Token: $VAULT_TOKEN" $VAULT_ADDR/v1/aws/creds/$VAULT_ROLE)
+2025-08-21T15:39:16.0143587Z [36;1mCREDS=$(curl --header "X-Vault-Token: $VAULT_TOKEN" $VAULT_ADDR/v1/aws/creds/$VAULT_ROLE)[0m
+2025-08-21T15:39:16.0145568Z [36;1mAWS_ACCESS_KEY_ID=$(echo $CREDS | jq -r .data.access_key)[0m
+2025-08-21T15:39:16.0147188Z [36;1mAWS_SECRET_ACCESS_KEY=$(echo $CREDS | jq -r .data.secret_key)[0m
+2025-08-21T15:39:16.0149137Z [36;1mecho "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> $GITHUB_ENV[0m
+2025-08-21T15:39:16.0150820Z [36;1mecho "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> $GITHUB_ENV[0m
+2025-08-21T15:39:16.0194455Z shell: /usr/bin/bash -e {0}
+2025-08-21T15:39:16.0195336Z env:
+2025-08-21T15:39:16.0196076Z   VAULT_ADDR: http://13.204.46.99:8200
+2025-08-21T15:39:16.0197124Z   VAULT_ROLE: terraform-role
+2025-08-21T15:39:16.0198569Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/00b41b92-4e43-41ed-98a6-c5b565988ed3
+2025-08-21T15:39:16.0200348Z   VAULT_TOKEN: ***
+2025-08-21T15:39:16.0201120Z ##[endgroup]
+2025-08-21T15:39:16.0328484Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-08-21T15:39:16.0330138Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-08-21T15:39:16.0331083Z 
+2025-08-21T15:39:17.2669231Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-08-21T15:39:18.2681106Z   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+2025-08-21T15:39:19.2395239Z   0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+2025-08-21T15:39:19.2396267Z 100   327  100   327    0     0    101      0  0:00:03  0:00:03 --:--:--   101
+2025-08-21T15:39:19.2397001Z 100   327  100   327    0     0    101      0  0:00:03  0:00:03 --:--:--   101
+2025-08-21T15:39:19.2850149Z ##[group]Run terraform init
+2025-08-21T15:39:19.2850463Z [36;1mterraform init[0m
+2025-08-21T15:39:19.2891562Z shell: /usr/bin/bash -e {0}
+2025-08-21T15:39:19.2891841Z env:
+2025-08-21T15:39:19.2892081Z   VAULT_ADDR: http://13.204.46.99:8200
+2025-08-21T15:39:19.2892645Z   VAULT_ROLE: terraform-role
+2025-08-21T15:39:19.2893086Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/00b41b92-4e43-41ed-98a6-c5b565988ed3
+2025-08-21T15:39:19.2893809Z   VAULT_TOKEN: ***
+2025-08-21T15:39:19.2894074Z   AWS_ACCESS_KEY_ID: AKIAZDCO362J6LRURRJ3
+2025-08-21T15:39:19.2894514Z   AWS_SECRET_ACCESS_KEY: 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
+2025-08-21T15:39:19.2894918Z ##[endgroup]
+2025-08-21T15:39:20.9823299Z [command]/home/runner/work/_temp/00b41b92-4e43-41ed-98a6-c5b565988ed3/terraform-bin init
+2025-08-21T15:39:21.0059426Z [0m[1mInitializing the backend...[0m
+2025-08-21T15:39:21.0061954Z [0m[1mInitializing modules...[0m
+2025-08-21T15:39:21.0062761Z - kiran_ec2 in modules/ec2
+2025-08-21T15:39:21.0066751Z [0m[1mInitializing provider plugins...[0m
+2025-08-21T15:39:21.0068147Z - Finding latest version of hashicorp/aws...
+2025-08-21T15:39:21.1047962Z - Installing hashicorp/aws v6.9.0...
+2025-08-21T15:39:25.6846169Z - Installed hashicorp/aws v6.9.0 (signed by HashiCorp)
+2025-08-21T15:39:25.6847981Z Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+2025-08-21T15:39:25.6849381Z selections it made above. Include this file in your version control repository
+2025-08-21T15:39:25.6850660Z so that Terraform can guarantee to make the same selections by default when
+2025-08-21T15:39:25.6851586Z you run "terraform init" in the future.[0m
+2025-08-21T15:39:25.6851984Z 
+2025-08-21T15:39:25.6852974Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2025-08-21T15:39:25.6853845Z [0m[32m
+2025-08-21T15:39:25.6854590Z You may now begin working with Terraform. Try running "terraform plan" to see
+2025-08-21T15:39:25.6855812Z any changes that are required for your infrastructure. All Terraform commands
+2025-08-21T15:39:25.6856749Z should now work.
+2025-08-21T15:39:25.6856998Z 
+2025-08-21T15:39:25.6857412Z If you ever set or change modules or backend configuration for Terraform,
+2025-08-21T15:39:25.6858633Z rerun this command to reinitialize your working directory. If you forget, other
+2025-08-21T15:39:25.6859676Z commands will detect it and remind you to do so if necessary.[0m
+2025-08-21T15:39:25.7198757Z ##[group]Run terraform plan
+2025-08-21T15:39:25.7199062Z [36;1mterraform plan[0m
+2025-08-21T15:39:25.7238902Z shell: /usr/bin/bash -e {0}
+2025-08-21T15:39:25.7239325Z env:
+2025-08-21T15:39:25.7239538Z   VAULT_ADDR: http://13.204.46.99:8200
+2025-08-21T15:39:25.7239832Z   VAULT_ROLE: terraform-role
+2025-08-21T15:39:25.7240230Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/00b41b92-4e43-41ed-98a6-c5b565988ed3
+2025-08-21T15:39:25.7240758Z   VAULT_TOKEN: ***
+2025-08-21T15:39:25.7240992Z   AWS_ACCESS_KEY_ID: AKIAZDCO362J6LRURRJ3
+2025-08-21T15:39:25.7241364Z   AWS_SECRET_ACCESS_KEY: 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
+2025-08-21T15:39:25.7241713Z ##[endgroup]
+2025-08-21T15:39:25.7661796Z [command]/home/runner/work/_temp/00b41b92-4e43-41ed-98a6-c5b565988ed3/terraform-bin plan
+2025-08-21T15:39:29.2483581Z 
+2025-08-21T15:39:29.2484386Z Terraform used the selected providers to generate the following execution
+2025-08-21T15:39:29.2485371Z plan. Resource actions are indicated with the following symbols:
+2025-08-21T15:39:29.2486254Z   [32m+[0m create[0m
+2025-08-21T15:39:29.2486515Z 
+2025-08-21T15:39:29.2486737Z Terraform will perform the following actions:
+2025-08-21T15:39:29.2487418Z 
+2025-08-21T15:39:29.2487761Z [1m  # module.kiran_ec2.aws_instance.kiran[0m will be created
+2025-08-21T15:39:29.2488205Z [0m  [32m+[0m[0m resource "aws_instance" "kiran" {
+2025-08-21T15:39:29.2488636Z       [32m+[0m[0m ami                                  = "ami-0861f4e788f5069dd"
+2025-08-21T15:39:29.2489067Z       [32m+[0m[0m arn                                  = (known after apply)
+2025-08-21T15:39:29.2489515Z       [32m+[0m[0m associate_public_ip_address          = (known after apply)
+2025-08-21T15:39:29.2489986Z       [32m+[0m[0m availability_zone                    = (known after apply)
+2025-08-21T15:39:29.2490443Z       [32m+[0m[0m disable_api_stop                     = (known after apply)
+2025-08-21T15:39:29.2490919Z       [32m+[0m[0m disable_api_termination              = (known after apply)
+2025-08-21T15:39:29.2491382Z       [32m+[0m[0m ebs_optimized                        = (known after apply)
+2025-08-21T15:39:29.2491881Z       [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+2025-08-21T15:39:29.2492749Z       [32m+[0m[0m force_destroy                        = false
+2025-08-21T15:39:29.2493191Z       [32m+[0m[0m get_password_data                    = false
+2025-08-21T15:39:29.2493602Z       [32m+[0m[0m host_id                              = (known after apply)
+2025-08-21T15:39:29.2494043Z       [32m+[0m[0m host_resource_group_arn              = (known after apply)
+2025-08-21T15:39:29.2494503Z       [32m+[0m[0m iam_instance_profile                 = (known after apply)
+2025-08-21T15:39:29.2494930Z       [32m+[0m[0m id                                   = (known after apply)
+2025-08-21T15:39:29.2495372Z       [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+2025-08-21T15:39:29.2495857Z       [32m+[0m[0m instance_lifecycle                   = (known after apply)
+2025-08-21T15:39:29.2496295Z       [32m+[0m[0m instance_state                       = (known after apply)
+2025-08-21T15:39:29.2496707Z       [32m+[0m[0m instance_type                        = "t3.micro"
+2025-08-21T15:39:29.2497121Z       [32m+[0m[0m ipv6_address_count                   = (known after apply)
+2025-08-21T15:39:29.2497539Z       [32m+[0m[0m ipv6_addresses                       = (known after apply)
+2025-08-21T15:39:29.2497949Z       [32m+[0m[0m key_name                             = (known after apply)
+2025-08-21T15:39:29.2498354Z       [32m+[0m[0m monitoring                           = (known after apply)
+2025-08-21T15:39:29.2498763Z       [32m+[0m[0m outpost_arn                          = (known after apply)
+2025-08-21T15:39:29.2499194Z       [32m+[0m[0m password_data                        = (known after apply)
+2025-08-21T15:39:29.2500207Z       [32m+[0m[0m placement_group                      = (known after apply)
+2025-08-21T15:39:29.2500674Z       [32m+[0m[0m placement_partition_number           = (known after apply)
+2025-08-21T15:39:29.2501125Z       [32m+[0m[0m primary_network_interface_id         = (known after apply)
+2025-08-21T15:39:29.2501702Z       [32m+[0m[0m private_dns                          = (known after apply)
+2025-08-21T15:39:29.2502108Z       [32m+[0m[0m private_ip                           = (known after apply)
+2025-08-21T15:39:29.2502785Z       [32m+[0m[0m public_dns                           = (known after apply)
+2025-08-21T15:39:29.2503233Z       [32m+[0m[0m public_ip                            = (known after apply)
+2025-08-21T15:39:29.2503888Z       [32m+[0m[0m region                               = "ap-south-1"
+2025-08-21T15:39:29.2504602Z       [32m+[0m[0m secondary_private_ips                = (known after apply)
+2025-08-21T15:39:29.2505298Z       [32m+[0m[0m security_groups                      = (known after apply)
+2025-08-21T15:39:29.2505959Z       [32m+[0m[0m source_dest_check                    = true
+2025-08-21T15:39:29.2506372Z       [32m+[0m[0m spot_instance_request_id             = (known after apply)
+2025-08-21T15:39:29.2506794Z       [32m+[0m[0m subnet_id                            = (known after apply)
+2025-08-21T15:39:29.2507198Z       [32m+[0m[0m tags_all                             = (known after apply)
+2025-08-21T15:39:29.2507594Z       [32m+[0m[0m tenancy                              = (known after apply)
+2025-08-21T15:39:29.2507996Z       [32m+[0m[0m user_data_base64                     = (known after apply)
+2025-08-21T15:39:29.2508392Z       [32m+[0m[0m user_data_replace_on_change          = false
+2025-08-21T15:39:29.2508807Z       [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+2025-08-21T15:39:29.2509040Z 
+2025-08-21T15:39:29.2509251Z       [32m+[0m[0m capacity_reservation_specification (known after apply)
+2025-08-21T15:39:29.2509503Z 
+2025-08-21T15:39:29.2509657Z       [32m+[0m[0m cpu_options (known after apply)
+2025-08-21T15:39:29.2509849Z 
+2025-08-21T15:39:29.2510013Z       [32m+[0m[0m ebs_block_device (known after apply)
+2025-08-21T15:39:29.2510212Z 
+2025-08-21T15:39:29.2510368Z       [32m+[0m[0m enclave_options (known after apply)
+2025-08-21T15:39:29.2510568Z 
+2025-08-21T15:39:29.2510738Z       [32m+[0m[0m ephemeral_block_device (known after apply)
+2025-08-21T15:39:29.2510949Z 
+2025-08-21T15:39:29.2511126Z       [32m+[0m[0m instance_market_options (known after apply)
+2025-08-21T15:39:29.2511337Z 
+2025-08-21T15:39:29.2511499Z       [32m+[0m[0m maintenance_options (known after apply)
+2025-08-21T15:39:29.2511706Z 
+2025-08-21T15:39:29.2511858Z       [32m+[0m[0m metadata_options (known after apply)
+2025-08-21T15:39:29.2512049Z 
+2025-08-21T15:39:29.2512394Z       [32m+[0m[0m network_interface (known after apply)
+2025-08-21T15:39:29.2512590Z 
+2025-08-21T15:39:29.2512769Z       [32m+[0m[0m private_dns_name_options (known after apply)
+2025-08-21T15:39:29.2512983Z 
+2025-08-21T15:39:29.2513178Z       [32m+[0m[0m root_block_device (known after apply)
+2025-08-21T15:39:29.2513443Z     }
+2025-08-21T15:39:29.2513539Z 
+2025-08-21T15:39:29.2513697Z [1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+2025-08-21T15:39:29.2513978Z [0m[90m
+2025-08-21T15:39:29.2514410Z ─────────────────────────────────────────────────────────────────────────────[0m
+2025-08-21T15:39:29.2514647Z 
+2025-08-21T15:39:29.2514834Z Note: You didn't use the -out option to save this plan, so Terraform can't
+2025-08-21T15:39:29.2515278Z guarantee to take exactly these actions if you run "terraform apply" now.
+2025-08-21T15:39:29.2720112Z Post job cleanup.
+2025-08-21T15:39:29.3460956Z [command]/usr/bin/git version
+2025-08-21T15:39:29.3496179Z git version 2.51.0
+2025-08-21T15:39:29.3539527Z Temporarily overriding HOME='/home/runner/work/_temp/6c98ce47-dd3c-487b-af21-b2111a5a9fba' before making global git config changes
+2025-08-21T15:39:29.3541170Z Adding repository directory to the temporary git global config as a safe directory
+2025-08-21T15:39:29.3543753Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Terraform-vault-gitworkflow/Terraform-vault-gitworkflow
+2025-08-21T15:39:29.3576492Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-08-21T15:39:29.3605579Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-08-21T15:39:29.3835107Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-08-21T15:39:29.3856447Z http.https://github.com/.extraheader
+2025-08-21T15:39:29.3867893Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-08-21T15:39:29.3897076Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-08-21T15:39:29.4225671Z Cleaning up orphan processes
